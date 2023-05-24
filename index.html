@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Etch-A-Sketch</h1>
+    <div id="tool-container">
+        <div id="tool-labels">
+            <div id="colour-label">
+                <small>Colour</small>
+            </div>
+            <div id="mode-label">
+                <small>Mode</small>
+            </div>
+            <div id="tools-label">
+                <small>Tools</small>
+            </div>
+            <div id="layout-label">
+                <small>Layout</small>
+            </div>
+        </div>
+        <div id="tool-bar">
+            <div id="colour-tab">
+                <input id="choose-colour" type="color" value="#333333">
+            </div>
+            <div id="mode-tab">
+                <button id="draw-btn" class="active">Draw</button>
+                <button id="erase-btn">Erase</button>
+            </div>
+            <div id="tools-tab">
+                <button id="guidelines-btn">Guidelines</button>
+                <button id="clear-btn">Clear</button>
+            </div>
+            <div id="layout-tab">
+                <p id="size-text">16 x 16</p>
+                <input id="cell-slider" type="range" value="16" min="16" max="64">
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="grid-container">
+    
+        </div>
+    </div>
+</body>
+</html>

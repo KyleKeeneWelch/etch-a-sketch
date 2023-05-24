@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: #8A9EA8;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 52px;
+    text-align: center;
+    padding: 10px;
+    background-color: #5C5E5F;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+}
+
+#container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    background-color: #fefefe;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+button {
+    padding: 5px 10% 5px 10%;
+    border-radius: 5px;
+    border: 1px solid #5C5E5F;
+    transition: 0.2s;
+    cursor: pointer;
+    min-width: fit-content;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+input[type='color'] {
+    border: none;
+    transition: 0.2s;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #fefefe;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2C2C2C;
+    margin-top: -6px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+.active {
+    background-color: #2C2C2C;
+    color: white;
+}
+
+#tool-labels {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #BFBFBF;
+    padding-top: 5px;
+    font-size: 12px;
+
+    & #colour-label {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    & #mode-label {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    & #tools-label {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    & #layout-label {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#tool-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 10px;
+}
+
+#tool-bar {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    background-color: #BFBFBF;
+    font-size: 14px;
+    flex-wrap: wrap;
+
+    & #colour-tab {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid white;
+        flex-wrap: wrap;
+    }
+
+    & #mode-tab {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        border-right: 2px solid white;
+        flex-wrap: wrap;
+    }
+
+    & #tools-tab {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        border-right: 2px solid white;
+        flex-wrap: wrap;
+    }
+
+    & #layout-tab {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .grid-container {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #tool-labels {
+        display: none;
+    }
+
+    #tool-bar #colour-tab, #tool-bar #mode-tab, #tool-bar #tools-tab, #tool-bar #layout-tab {
+        border-right: none;
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .grid-container {
+        width: 300px;
+        height: 300px;
+    }
+}
